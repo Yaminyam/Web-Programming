@@ -6,6 +6,6 @@ var a = [f];
 a[0]();
 
 var o = {
-  func:f;
+  func:f
 }
 o.func();

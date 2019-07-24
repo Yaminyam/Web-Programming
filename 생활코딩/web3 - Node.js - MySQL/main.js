@@ -33,7 +33,7 @@ var app = http.createServer(function(request,response){
               allowedTags:['h1']
             });
             var list = template.list(filelist);
-            var html = template.HTML(title, list,
+            var html = template.HTML(sanitizedTitle, list,
               `<h2>${sanitizedTitle}</h2>${sanitizedDescription}`,
               ` <a href="/create">create</a>
                 <a href="/update?id=${sanitizedTitle}">update</a>
