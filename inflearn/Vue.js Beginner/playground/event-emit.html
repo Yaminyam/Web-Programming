@@ -8,13 +8,13 @@
   </head>
   <body>
     <div id="app">
-      <app-header></app-header>
+      <app-header v-on:pass="logText"></app-header>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script>
       var appHeader = {
-        template: '<button v-on:click"passEvent">click me</button>',
+        template: '<button v-on:click="passEvent">click me</button>',
         mothods: {
           passEvent: function() {
             this.$emit("pass");
@@ -25,6 +25,11 @@
         el: "#app",
         components: {
           "app-header": appHeader
+        },
+        methods: {
+          logText: function() {
+            console.log("hi");
+          }
         }
       });
     </script>
