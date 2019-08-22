@@ -19,6 +19,10 @@ app.get("/", function(request, response) {
   });
 });
 
+app.get("/page/:pageId/:chapterId", function(request, response) {
+  return response.send(request.params);
+});
+
 app.listen(3000, function() {
   console.log("Example app listening on port 3000!");
 });
