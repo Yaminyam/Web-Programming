@@ -6,7 +6,7 @@ var app = express();
 
 app.use(
   session({
-    secret: "keyboard cat",
+    secret: "qweruiopasdfjkl",
     resave: false,
     saveUninitialized: true
   })
