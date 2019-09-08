@@ -20,8 +20,33 @@ app.use(
   })
 );
 
+var authData = {
+  email: "egoing777@gmail.com",
+  password: "111111",
+  nickname: "egoing"
+};
+
 var passport = require("passport"),
   LocalStrategy = require("passport-local").Strategy;
+
+passport.use(
+  new LocalStrategy(function(username, password, done) {
+    if (username === authData.email) {
+      if (password === authData.password) {
+        return done(null, authData);
+      } else {
+        return done(null, false, {
+          message: "Incorrect password."
+        });
+      }
+    } else {
+      return done(null, false, {
+        message: "Incorrect username."
+      });
+    }
+  })
+);
+
 app.post(
   "/auth/login_process",
   passport.authenticate("local", {
