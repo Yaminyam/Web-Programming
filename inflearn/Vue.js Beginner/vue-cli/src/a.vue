@@ -1,7 +1,13 @@
-<template></template>
+<template>
+  <div>header</div>
+</template>
 
 <script>
-export default {};
+export default {
+  methods: {
+    addNum: function() {}
+  }
+};
 </script>
 
 <style>
